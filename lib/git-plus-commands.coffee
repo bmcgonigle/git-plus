@@ -8,6 +8,7 @@ getCommands = ->
   GitCheckoutCurrentFile = require './models/git-checkout-current-file'
   GitCherryPick          = require './models/git-cherry-pick'
   GitCommit              = require './models/git-commit'
+  GitCommitBeta              = require './models/git-commit-beta'
   GitCommitAmend         = require './models/git-commit-amend'
   GitDiff                = require './models/git-diff'
   GitDifftool            = require './models/git-difftool'
@@ -49,6 +50,7 @@ getCommands = ->
       commands.push ['git-plus:checkout-all-files', 'Checkout All Files', -> GitCheckoutAllFiles(repo)]
       commands.push ['git-plus:checkout-current-file', 'Checkout Current File', -> GitCheckoutCurrentFile(repo)]
       commands.push ['git-plus:commit', 'Commit', -> GitCommit(repo)]
+      commands.push ['git-plus:commit-beta', 'Commit Beta', -> GitCommitBeta(repo)]
       commands.push ['git-plus:commit-all', 'Commit All', -> GitCommit(repo, stageChanges: true)]
       commands.push ['git-plus:commit-amend', 'Commit Amend', -> GitCommitAmend(repo)]
       commands.push ['git-plus:add-and-commit', 'Add And Commit', -> git.add(repo, file: currentFile).then -> GitCommit(repo)]

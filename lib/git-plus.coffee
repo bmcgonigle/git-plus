@@ -13,6 +13,7 @@ GitCheckoutAllFiles    = require './models/git-checkout-all-files'
 GitCheckoutCurrentFile = require './models/git-checkout-current-file'
 GitCherryPick          = require './models/git-cherry-pick'
 GitCommit              = require './models/git-commit'
+GitCommitBeta              = require './models/git-commit-beta'
 GitCommitAmend         = require './models/git-commit-amend'
 GitDiff                = require './models/git-diff'
 GitDifftool            = require './models/git-difftool'
@@ -87,6 +88,7 @@ module.exports =
     @subscriptions.add atom.commands.add 'atom-workspace', 'git-plus:add-modified', -> git.getRepo().then((repo) -> git.add(repo, update: true))
     @subscriptions.add atom.commands.add 'atom-workspace', 'git-plus:add-all', -> git.getRepo().then((repo) -> git.add(repo))
     @subscriptions.add atom.commands.add 'atom-workspace', 'git-plus:commit', -> git.getRepo().then((repo) -> GitCommit(repo))
+    @subscriptions.add atom.commands.add 'atom-workspace', 'git-plus:commit-beta', -> git.getRepo().then((repo) -> GitCommitBeta(repo))
     @subscriptions.add atom.commands.add 'atom-workspace', 'git-plus:commit-all', -> git.getRepo().then((repo) -> GitCommit(repo, stageChanges: true))
     @subscriptions.add atom.commands.add 'atom-workspace', 'git-plus:commit-amend', -> git.getRepo().then((repo) -> new GitCommitAmend(repo))
     @subscriptions.add atom.commands.add 'atom-workspace', 'git-plus:add-and-commit', -> git.getRepo().then((repo) -> git.add(repo, file: currentFile(repo)).then -> GitCommit(repo))

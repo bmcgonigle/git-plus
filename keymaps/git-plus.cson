@@ -8,6 +8,9 @@
 # For more detailed documentation see
 # https://atom.io/docs/latest/advanced/keymaps
 
+'.platform-darwin .commit-beta':
+  'cmd-s': 'core:save'
+
 '.platform-darwin':
   'cmd-shift-h': 'git-plus:menu'
   'cmd-shift-c': 'git-plus:commit'
