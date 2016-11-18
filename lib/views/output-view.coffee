@@ -19,7 +19,10 @@ class OutputView extends ScrollView
     @html = ansiToHtml.toHtml content
     this
 
+  clearExistingTimeout: -> clearTimeout(@timeout)
+
   finish: ->
+    @clearExistingTimeout()
     @find(".output").html(@html)
     @show()
     @timeout = setTimeout =>
