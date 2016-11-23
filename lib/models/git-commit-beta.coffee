@@ -23,7 +23,6 @@ class StatusListView extends View
 class CommitView extends ScrollView
   @content: ({files})->
     @div class: 'git-plus commit-beta', =>
-      @div class: ''
       @subview 'commitMessage',  new TextEditorView(placeholderText: 'Enter your commit here...')
       @subview 'status', new StatusListView(files)
 
