@@ -74,6 +74,10 @@
           'command': 'git-plus:add-all-commit-and-push'
         }
         {
+          'label': 'Add All, Commit And Push Upstream'
+          'command': 'git-plus:add-all-commit-and-push-upstream'
+        }
+        {
           'label': 'Push'
           'command': 'git-plus:push'
         }

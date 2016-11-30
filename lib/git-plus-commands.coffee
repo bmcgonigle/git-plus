@@ -55,6 +55,7 @@ getCommands = ->
       commands.push ['git-plus:add-and-commit-and-push', 'Add And Commit And Push', -> git.add(repo, file: currentFile).then -> GitCommit(repo, andPush: true)]
       commands.push ['git-plus:add-all-and-commit', 'Add All And Commit', -> git.add(repo).then -> GitCommit(repo)]
       commands.push ['git-plus:add-all-commit-and-push', 'Add All, Commit And Push', -> git.add(repo).then -> GitCommit(repo, andPush: true)]
+      commands.push ['git-plus:add-all-commit-and-push-upstream', 'Add All, Commit And Push Upstream', -> git.add(repo).then -> GitCommit(repo) -> GitPush(repo, setUpstream: true)]
       commands.push ['git-plus:commit-all-and-push', 'Commit All And Push', -> GitCommit(repo, stageChanges: true, andPush: true)]
       commands.push ['git-plus:checkout', 'Checkout', -> GitBranch.gitBranches(repo)]
       commands.push ['git-plus:checkout-remote', 'Checkout Remote', -> GitBranch.gitRemoteBranches(repo)]

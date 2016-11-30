@@ -15,6 +15,7 @@
   'cmd-shift-a q': 'git-plus:add-and-commit-and-push'
   'cmd-shift-a a': 'git-plus:add-all-and-commit'
   'cmd-shift-a p': 'git-plus:add-all-commit-and-push'
+  'cmd-shift-a u': 'git-plus:add-all-commit-and-push-upstream'
 
 '.platform-win32, .platform-linux':
   'ctrl-shift-h': 'git-plus:menu'
